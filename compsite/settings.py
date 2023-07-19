@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-utaajp$$33l2cgtm3f6!vx049l=*vg9hs=^j^)li6jrmp$94!v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['cengine.azurewebsites.net']
+ALLOWED_HOSTS = ['CoEngine.azurewebsites.net']
 
 
 # Application definition
@@ -127,7 +127,6 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-
     "users/static",
 ]
 # Default primary key field type

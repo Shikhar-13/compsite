@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#c2f7fd;
+}
+#navlink1 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink2 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink3 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink4 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+.Nav-image {
+    height: 70px;
+    width: 90px;
+}
+
+
+input[type=text],input[type=password],input[type=email],input[type=text],input{
+    border-radius: 34px;
+    width: 240px;
+    height: 32px;
+}
+.form-group{
+    width: 120px;
+    height:auto;
+    align-items: center;
+    
+
+    
+
+}
+::placeholder{
+    text-align: center;
+}
+
+#branch,#year{
+    border-radius: 54px;
+    width: 195px;
+   
+} 
+.form-item{
+    background-color:  #ffffff;
+    border-radius: 20px;
+   
+} 
+.form-section{
+    text-align: center;
+}

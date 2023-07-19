@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+  background-color: #c2f7fd;
+ }
+
+.foot{
+  position:absolute;
+  bottom: 0;
+  text-align: center;
+  right: 30px;
+  padding: 10px;
+
+}
+      .contain {
+          background-color: #dce7f2;
+          display: flex;
+          flex-direction: column;
+          border: 2px solid #183b56;
+          border-radius: 20px;
+          width: 73%;
+          margin: auto;
+          box-shadow: 8px 10px #183b56;
+          margin: 112px;;
+      }
+
+      .primary {
+          text-decoration-line: underline;
+          font-family: 'Lilita One', cursive;
+          text-align: center;
+          font-size: 3rem;
+          color: #183b56;
+      }
+
+      p {
+          font-family: 'Bitter', serif;
+          font-size: 1.3rem;
+          padding: 10px 35px;
+          text-align: justify;
+          color: #183b56;
+      }
+  </style>
+</head>
+<body>
+    {% extends 'compsite_pro/base.html' %}
+    {% block content %}
+    <div class="contain">
+        <h1 class="primary">Welcome to Startgen!</h1>
+        <p>
+
+            At Startgen, we believe that education is the key to unlocking the full potential of individuals and
+            societies. Our mission is to provide a comprehensive platform that empowers learners of all ages to
+            discover, learn, and grow in a dynamic and inclusive educational environment.
+
+            With a passion for knowledge and a commitment to excellence, we strive to be a trusted resource for
+            learners, educators, and parents alike. Whether you're a student looking to expand your horizons, an
+            educator seeking innovative teaching tools, or a parent dedicated to supporting your child's educational
+            journey, we have you covered.
+
+            Our website offers a diverse range of educational resources, including interactive courses, engaging
+            tutorials, informative articles, and thought-provoking videos. We cover a wide array of subjects, from
+            mathematics and science to literature and history, catering to learners of different interests and academic
+            levels.
+
+            One of our core principles is accessibility. We believe that education should be accessible to everyone,
+            regardless of their background or circumstances. Therefore, we strive to provide content that is inclusive,
+            easy to understand, and adaptable to different learning styles. We also offer features such as multilingual
+            support and assistive technologies to ensure that all learners have equal opportunities to thrive.
+
+            At Startgen, we value collaboration and community. We foster a vibrant learning community where learners can
+            connect with peers, ask questions, and engage in meaningful discussions. Our dedicated team of educators and
+            experts are always available to provide guidance, support, and personalized feedback to enhance the learning
+            experience.
+
+            We are committed to staying at the forefront of educational innovation. Our platform leverages the latest
+            advancements in technology, such as artificial intelligence and virtual reality, to create immersive and
+            interactive learning experiences. We continuously update our content and incorporate feedback from our users
+            to ensure that our educational materials remain relevant and impactful.
+
+            Thank you for choosing Startgen as your educational companion. Together, let's embark on a transformative
+            journey of discovery, knowledge acquisition, and personal growth.</p>
+    </div>
+    {% endblock content %}
+    
+</body>
+</html>

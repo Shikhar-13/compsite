@@ -1,0 +1,64 @@
+#navlink1 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink2 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink3 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+#navlink4 {
+    color: black;
+    font-family: Roboto;
+
+}
+
+.Nav-image {
+    height: 70px;
+    width: 90px;
+}
+
+.school-background {
+    background-color: #dce7f2;
+
+}
+
+.school-main-heading {
+
+    color: #183b56;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+
+}
+
+.item-iamges {
+    height: 90px;
+    width: 100px;
+}
+
+.school-item-container {
+    background-color: #f2f7f7;
+    width: 100%;
+    border-radius: 10px;
+
+
+}
+
+.item-image-heading {
+    color: #748794;
+
+    font-family: Roboto;
+    font-size: 14px;
+    font-weight: 600;
+
+}

@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-utaajp$$33l2cgtm3f6!vx049l=*vg9hs=^j^)li6jrmp$94!v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['CoEngine.azurewebsites.net']
+ALLOWED_HOSTS = ['20.118.48.0','CoEngine.azurewebsites.net']
 
 
 # Application definition

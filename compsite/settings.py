@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-utaajp$$33l2cgtm3f6!vx049l=*vg9hs=^j^)li6jrmp$94!v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['20.118.48.0','coengine.azurewebsites.net']
+ALLOWED_HOSTS = ['20.118.48.0']
 
 
 # Application definition
@@ -125,12 +125,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static/",
+    BASE_DIR / 'compsite_pro/static',
     "users/static",
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

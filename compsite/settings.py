@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-utaajp$$33l2cgtm3f6!vx049l=*vg9hs=^j^)li6jrmp$94!v
 DEBUG = True
 
 ALLOWED_HOSTS = ['CoEngine.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['http://*.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['CoEngine.azurewebsites.net']
 
 
 # Application definition

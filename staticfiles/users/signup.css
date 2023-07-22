@@ -1,68 +1,43 @@
-*{
-    margin: 0;
-    padding: 0;
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    margin:100px;
+    padding: 60px;
+    background-color: aliceblue;
+  }
+body {
+    padding: 7%;
+    background-color: #b0f4fc; 
+    margin:40px auto;
+  }
+li{
+    font-size: 0%;
 }
-body{
-    background-color:#c2f7fd;
+.help-block{
+    font-size: 0%;
 }
-#navlink1 {
-    color: black;
-    font-family: Roboto;
-
-}
-
-#navlink2 {
-    color: black;
-    font-family: Roboto;
-
-}
-
-#navlink3 {
-    color: black;
-    font-family: Roboto;
-
-}
-
-#navlink4 {
-    color: black;
-    font-family: Roboto;
-
-}
-
-.Nav-image {
-    height: 70px;
-    width: 90px;
-}
-
-
-input[type=text],input[type=password],input[type=email],input[type=text],input{
-    border-radius: 34px;
-    width: 240px;
-    height: 32px;
-}
-.form-group{
-    width: 120px;
-    height:auto;
-    align-items: center;
+.form-control{
+    border-color: #f4c531;
+    margin-bottom: 0.9em;
+    border-bottom: #f4c531 3px;
     
-
-    
-
 }
-::placeholder{
-    text-align: center;
+.helptext{
+    font-size: 0%;
 }
-
-#branch,#year{
-    border-radius: 54px;
-    width: 195px;
-   
-} 
-.form-item{
-    background-color:  #ffffff;
+input{
+    border: #f4c531 6px;
+    border-radius: 25px;
+}
+form{
+    padding: 20px ;
+    background-color: #ffffff;
     border-radius: 20px;
-   
-} 
-.form-section{
-    text-align: center;
+    max-width: 400px;
+    min-width: 250px;
+}
+h2{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

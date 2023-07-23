@@ -1,127 +1,269 @@
-<!doctype html>
-{% load bootstrap3 %}
-{% load static %}
+<!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{% static 'compsite_pro/style.css'%}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-    <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <title>COMP</title>
     
-    {% bootstrap_css %}
-   {% bootstrap_javascript %}
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'compsite_pro/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'compsite_pro/assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'compsite_pro/assets/css/templatemo-grad-school.css' %}">
+    <link rel="stylesheet" href="{% static 'compsite_pro/assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'compsite_pro/assets/css/lightbox.css' %}">
+<!--
+    
+TemplateMo 557 Grad School
+
+https://templatemo.com/tm-557-grad-school
+
+-->
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-      <div class="navbar-header">
-       <button type="button" class="navbar-toggle collapsed"
-      data-toggle="collapse" data-target="#navbar"
-      aria-expanded="false" aria-controls="navbar">
-      </button>
-      <a class="navbar-brand" href="{% url 'compsite_pro:index' %}">
-      COMP</a>
-      </div>
-       <div id="navbar" class="navbar-collapse collapse">
-        {% if user.is_authenticated %}
-       <ul class="nav navbar-nav">
-       <li><a href="{% url 'compsite_pro:topics' %}">Subjects</a></li>
-      </ul>{% endif %}
-      <ul class="nav navbar-nav navbar-right">
-      {% if user.is_authenticated %}
-      <li><a> {{ user.username }}.</a></li>
-      <li><a href="{% url 'users:logout' %}">log out</a></li>
-      {% else %}
-      <li><a href="{% url 'users:register' %}">register</a></li>
-      <li><a href="{% url 'users:login' %}">log in</a></li>
-      {% endif %}
-      </ul>
-      </div><!--/.nav-collapse -->
-      </div>
-      </nav>
-      <div id="sectionstudent">
-        <div class="school-background pt-5 pb-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h1 class="school-main-heading"> Student Mangement </h1>
-                    </div>
 
-                    <div class="col-12 col-md-6 col-lg-3 mt-2">
-                        <div class="shadow school-item-container text-center p-3 mb-3" onclick="display('sectionsubject')">
-                            <img src="https://w7.pngwing.com/pngs/744/285/png-transparent-syllabus-computer-icons-school-the-last-of-us-icon-angle-text-rectangle-thumbnail.png" class="item-iamges" /> {% if user.is_authenticated %}
-                            <h1 class="item-image-heading mt-3"><a href="{% url 'compsite_pro:topics' %}">Subject & syllabus </a></h1>{% endif %}
-                        </div>
-                    </div>
+<body>
 
-                    <div class="col-12  col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                          
-                           
-                           
-                            <a href="{% url 'compsite_pro:coming' %}">  <img src="https://cdn-icons-png.flaticon.com/512/2693/2693624.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Live Classes </h1> </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12  col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                          
-                           <a href="{% url 'compsite_pro:coming' %}l">  <img src="https://cdn-icons-png.flaticon.com/512/3403/3403561.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Offline/Online <br> Examination </h1> </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                           
-                            <a href="{% url 'compsite_pro:coming' %}"> <img src="https://www.pngitem.com/pimgs/m/72-720604_list-romeo-landinez-co-list-icon-blue-png.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Exam Category </h1></a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                            
-                           <a href="{% url 'compsite_pro:coming' %}"> <img src="https://www.vhv.rs/dpng/d/540-5402396_transparent-bar-graph-clipart-blue-bar-graph-icon.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Marks & Grades </h1></a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                           
-                           <a href="{% url 'compsite_pro:coming' %}"> <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/grade-book-2847268-2367388.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Gradebook </h1> </a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                           
-                            <a href="{% url 'compsite_pro:coming' %}"> <img src="https://w7.pngwing.com/pngs/310/78/png-transparent-id-card-blue-square-text-symbol-student-id-blue-text-rectangle-thumbnail.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Student Id Card </h1></a>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-3">
-                        <div class="shadow school-item-container text-center p-3 mb-3">
-                           
-                           <a href="{% url 'compsite_pro:coming' %}">  <img src="https://png.pngtree.com/png-vector/20211129/ourmid/pngtree-money-growth-with-graph-vector-png-image_4043616.png" class="item-iamges" /><h1 class="item-image-heading mt-3"> Students's Promotion </h1></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+   
+  <!--header-->
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="#"><em>COMP</em>A</a>
     </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+      <ul class="main-menu">
+        <li><a href="{% url 'compsite_pro:index' %}">Home</a></li>
+        <li><a href="#section2">About Us</a>
+         
+        </li>{% if user.is_authenticated %}
+        <li><a href="#section4">Subjects</a></li>
+        <!-- <li><a href="#section5">Video</a></li> -->
+        
+        <li><a href="#section6">log out</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
 
-                    
+  <!-- ***** Main Banner Area Start ***** -->
+  <section class="section main-banner" id="top" data-section="section1">
+      <video autoplay muted loop id="bg-video">
+          <source src="assets/images/course-video.mp4" type="video/mp4" />
+      </video>
 
-                    <div class="col-12">
-                        <div>
-                            <button class="bg-dark" onclick="display('sectionstudent')"> Back </button>
-                        </div>
-                    </div>
-                
+      <div class="video-overlay header-text">
+          <div class="caption">
+              <h2><em>Your</em> Classroom</h2>
+              {% if user.is_authenticated %}
+              <div class="main-button">
+                <div class="scroll-to-section"><a href="#section2">{{ user.username }}</a></div>
+          </div><br>{% else %}
+              <div class="main-button">
+                  <div class="scroll-to-section"><a href="{% url 'users:register' %}">register</a></div>
+                  <br>
+                  <div class="main-button">
+                    <div class="scroll-to-section"><a href="{% url 'users:login' %}">Log in</a></div>
+              </div>{% endif %}
+          </div>
+          <br>
+         
+      </div>
+      </div>
+  </section>
+  <!-- ***** Main Banner Area End ***** -->
 
-  </body>
+
+  <section class="features">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-12">
+          <div class="features-post">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-pencil"></i>Subjects and syllabus</h4>
+              </div>
+              <div class="content-hide">
+                <div class="scroll-to-section"><a href="#section2">More Info.</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="features-post second-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-graduation-cap"></i>Class related recording</h4>
+              </div>
+              <div class="content-hide">
+              
+                <div class="scroll-to-section"><a href="#section3">Details</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-12">
+          <div class="features-post third-features">
+            <div class="features-content">
+              <div class="content-show">
+                <h4><i class="fa fa-book"></i>Notices</h4>
+              </div>
+              <div class="content-hide">
+                <div class="scroll-to-section"><a href="#section4">Read More</a></div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  {% if user.is_authenticated %}
+  {% for topic in topics %}
+  <section class="section courses" data-section="section4">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-heading">
+            <h2>Subjects</h2>
+          </div>
+        </div>
+        <div class="owl-carousel owl-theme">
+          <div class="item">
+            <img src="{% static 'compsite_pro/assets/images/courses-01.jpg' %}" alt="Course #1">
+            <div class="down-content">
+              <h4>{{ topic }}</h4>
+              <div class="author-image">
+              </div>
+              <div class="text-button-pay">
+                <a href="{% url 'compsite_pro:topic' topic.id %}">more info<i class="fa fa-angle-double-right"></i></a>
+              </div>
+            </div>
+          </div>
+          {% endif %}
+         
+         
+         
+         
+        
+         
+ 
+          </div>
+        </div>
+      </div>
+  </section>
+  
+
+  <section class="section video" data-section="section5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 align-self-center">
+          <div class="left-content">
+            <span>our presentation is for you</span>
+            <h4>Watch the video to learn more <em>about Grad School</em></h4>
+            <p>You are NOT allowed to redistribute this template ZIP file on any template collection website. However, you can use this template to convert into a specific theme for any kind of CMS platform such as WordPress. You may <a rel="nofollow" href="https://templatemo.com/contact" target="_parent">contact TemplateMo</a> for details.
+            <br><br>Suspendisse tincidunt, magna ut finibus rutrum, libero dolor euismod odio, nec interdum quam felis non ante.</p>
+            <div class="main-button"><a rel="nofollow" href="https://fb.com/templatemo" target="_parent">External URL</a></div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <article class="video-item">
+            <div class="video-caption">
+              <h4>Power HTML Template</h4>
+            </div>
+            <figure>
+              <a href="https://www.youtube.com/watch?v=r9LtOG6pNUw" class="play"><img src="{% static 'compsite_pro/assets/images/main-thumb.png' %}"></a>
+            </figure>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <p><i class="fa fa-copyright"></i> Powered by Startgen  
+        
+          
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'compsite_pro/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'compsite_pro/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'compsite_pro/assets/js/isotope.min.js' %}"></script>
+    <script src="{% static 'compsite_pro/assets/js/owl-carousel.js' %}"></script>
+    <script src="{% static 'compsite_pro/assets/js/lightbox.js' %}"></script>
+    <script src="{% static 'compsite_pro/assets/js/tabs.js' %}"></script>
+    <script src="{% static 'compsite_pro/assets/js/video.js' %}"></script>
+    <script src="{% static 'compsite_pro/assets/js/slick-slider.js'%}"></script>
+    <script src="{% static 'compsite_pro/assets/js/custom.js' %}"></script>
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+          if($(e.target).hasClass('external')) {
+            return;
+          }
+          e.preventDefault();
+          $('#menu').removeClass('active');
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
 </html>

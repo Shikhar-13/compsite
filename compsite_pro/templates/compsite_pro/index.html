@@ -35,19 +35,19 @@ https://templatemo.com/tm-557-grad-school
   <!--header-->
   <header class="main-header clearfix" role="header">
     <div class="logo">
-      <a href="#"><em>COMP</em>A</a>
+      <a href="{% url 'compsite_pro:index' %}"><em>COMP</em>A</a>
     </div>
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
       <ul class="main-menu">
         <li><a href="{% url 'compsite_pro:index' %}">Home</a></li>
-        <li><a href="#section2">About Us</a>
+        <li><a href="{% url 'compsite_pro:about' %}">About Us</a>
          
         </li>{% if user.is_authenticated %}
-        <li><a href="#section4">Subjects</a></li>
+        <li><a href="{% url 'compsite_pro:topics' %}">Subjects</a></li>
         <!-- <li><a href="#section5">Video</a></li> -->
         
-        <li><a href="#section6">log out</a></li>
+        <li><a href="{% url 'users:logout' %}">log out</a></li>
         {% endif %}
       </ul>
     </nav>
@@ -67,16 +67,16 @@ https://templatemo.com/tm-557-grad-school
                 <div class="scroll-to-section"><a href="#section2">{{ user.username }}</a></div>
           </div><br>{% else %}
               <div class="main-button">
-                  <div class="scroll-to-section"><a href="{% url 'users:register' %}">register</a></div>
+                  <div><a href="{% url 'users:register' %}">register</a></div></div>
                   <br>
                   <div class="main-button">
-                    <div class="scroll-to-section"><a href="{% url 'users:login' %}">Log in</a></div>
+                    <div><a href="{% url 'users:login' %}">Log in</a></div>
               </div>{% endif %}
           </div>
           <br>
          
       </div>
-      </div>
+     
   </section>
   <!-- ***** Main Banner Area End ***** -->
 

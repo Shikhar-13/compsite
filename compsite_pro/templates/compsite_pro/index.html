@@ -39,8 +39,8 @@ https://templatemo.com/tm-557-grad-school
     </div>
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
-      <ul class="main-menu">
-        <li><a href="{% url 'compsite_pro:index' %}">Home</a></li>
+        <ul class="mainmenu">
+        <li><a href="{% url 'compsite_pro:index' %}" class="check">Home</a></li>
         <li><a href="{% url 'compsite_pro:about' %}">About Us</a>
          
         </li>{% if user.is_authenticated %}
@@ -91,7 +91,7 @@ https://templatemo.com/tm-557-grad-school
                 <h4><i class="fa fa-pencil"></i>Subjects and syllabus</h4>
               </div>
               <div class="content-hide">{% if user.is_authenticated %}
-                <div class="scroll-to-section"><a href="{% url 'compsite_pro:topics' %}">More Info.</a></div>{% endif %}
+                <div><a href="{% url 'compsite_pro:topics' %}">More Info.</a></div>{% endif %}
             </div>
             </div>
           </div>
@@ -104,7 +104,7 @@ https://templatemo.com/tm-557-grad-school
               </div>
               <div class="content-hide">
               
-                <div class="scroll-to-section"><a href="{% url 'compsite_pro:coming' %}">Details</a></div>
+                <div><a href="{% url 'compsite_pro:coming' %}">Details</a></div>
             </div>
             </div>
           </div>
@@ -116,7 +116,7 @@ https://templatemo.com/tm-557-grad-school
                 <h4><i class="fa fa-book"></i>Notices</h4>
               </div>
               <div class="content-hide">
-                <div class="scroll-to-section"><a href="{% url 'compsite_pro:coming' %}">Read More</a></div>
+                <div><a href="{% url 'compsite_pro:coming' %}">Read More</a></div>
             </div>
             </div>
           </div>

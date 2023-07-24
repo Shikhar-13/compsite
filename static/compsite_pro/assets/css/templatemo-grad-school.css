@@ -80,7 +80,6 @@ p {
     outline: none;
 }
 
-a.menu-link { display: none; }
 
 @media screen and (max-width: 950px) {
   a.menu-link {
@@ -155,11 +154,11 @@ a.menu-link { display: none; }
       padding-left: 30px!important;
   }
 
-  .main-menu {
-      padding-right: 30px!important;
+  .mainmenu {
+      padding-right: 30px;
   }
 
-  .main-menu li {
+  .mainmenu li {
       margin-left: 5px!important;
   }
 }
@@ -190,88 +189,32 @@ a.menu-link { display: none; }
     color: #f5a425;
 }
 
-.main-menu {
+.mainmenu {
     float: right;
     padding-right: 60px;
 }
 
-.main-menu li {
+.mainmenu li {
     display: inline-block;
     line-height: 79px;
     margin-left: 15px;
     position: relative;
 }
 
-.main-menu li:first-child {
+.mainmenu li:first-child {
     margin-left: 0px;
 }
 
-.main-menu li a {
-    padding: 10px 15px;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 700;
-    color: #fff;
-    border: 2px solid transparent;
-    transition: all 0.5s;
-}
 
-.main-menu li.has-submenu a:after {
-    content: '\f107';
-    font-family: "FontAwesome";
-    margin-left: 5px;
-}
 
-.main-menu li.has-submenu ul li a:after {
-    display: none;
-}
-
-.main-menu li .sub-menu {
-    position: absolute;
-    width: 160px;
-    background-color: #18233a;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-}
-
-.main-menu li:hover .sub-menu {
-    opacity: 1;
-    visibility: visible;
-}
-
-.main-menu li .sub-menu li {
-    display: block;
-    line-height: 20px;
-    margin-left: 0px;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #121b2f;
-}
-
-.main-menu li .sub-menu li:first-child {
-    padding-top: 15px;
-}
-
-.main-menu li .sub-menu li:last-child {
+.mainmenu li .sub-menu li:last-child {
     margin-bottom: 0px;
     border-bottom: none;
 }
 
-.main-menu li .sub-menu li a {
-    font-size: 12px;
-    font-weight: 500;
-    padding: 0px 15px;
-    letter-spacing: 0.5px;
-    border: none;
-    transition: all 0.5s;
-}
 
-.main-menu li .sub-menu li a:hover {
-    color: #f5a425;
-    border: none;
-}
+
+
 
 .main-nav li:hover a,
 .main-nav li.active a {
@@ -562,8 +505,7 @@ section.why-us {
   display: block;
   margin-bottom: 0.75em;
 }
-#tabs ul .ui-tabs-active {
-}
+
 #tabs ul .ui-tabs-active a {
   color: #f5a425;
 }

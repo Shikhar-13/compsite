@@ -56,7 +56,7 @@ https://templatemo.com/tm-557-grad-school
   <!-- ***** Main Banner Area Start ***** -->
   <section class="section main-banner" id="top" data-section="section1">
       <video autoplay muted loop id="bg-video">
-          <source src="{% static 'compsite_pro/assets/images/course-video.mp4' %}" type="video/mp4" />
+          <source src="{% static 'compsite_pro/assets/images/bgvid.mp4' %}" type="video/mp4" />
       </video>
 
       <div class="video-overlay header-text">
@@ -149,6 +149,7 @@ https://templatemo.com/tm-557-grad-school
               </div>
             </div>
           </div>
+          {% empty %}
           {% endfor %}
           {% endif %}
          

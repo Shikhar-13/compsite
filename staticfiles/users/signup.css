@@ -8,8 +8,8 @@
     background-color: aliceblue;
   }
 body {
-    padding: 7%;
-    background-color: #b0f4fc; 
+    padding: 10%;
+    background-color: #f4c531; 
     margin:40px auto;
   }
 li{
@@ -36,7 +36,7 @@ form{
     background-color: #ffffff;
     border-radius: 20px;
     max-width: 400px;
-    min-width: 250px;
+    min-width: 2;
 }
 h2{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

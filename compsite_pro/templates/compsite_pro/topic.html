@@ -1,13 +1,36 @@
 <!DOCTYPE html>
+{% load static %}
+{% load bootstrap3 %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <title>subject</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   <link rel="stylesheet" href="{% static 'compsite_pro/subject.css' %}">
+    <title>{{ topic }}</title>
 </head>
 <body>
-  {% extends 'compsite_pro/base.html' %}
+  <header class="main-header clearfix" role="header">
+    <div class="logo">
+      <a href="{% url 'compsite_pro:topics' %}"><em>🡐</em></a>
+    </div>
+    <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
+    <nav id="menu" class="main-nav" role="navigation">
+        <ul class="mainmenu">
+        <li><a href="{% url 'compsite_pro:index' %}" class="check">Home</a></li>
+        <li><a href="{% url 'compsite_pro:about' %}">About Us</a>
+         
+        </li>{% if user.is_authenticated %}
+        <li><a href="{% url 'compsite_pro:topics' %}">Subjects</a></li>
+        <!-- <li><a href="#section5">Video</a></li> -->
+        
+        <li><a href="{% url 'users:logout' %}">log out</a></li>
+        {% endif %}
+      </ul>
+    </nav>
+  </header>
+
   {% block content %}
   <p> {{ topic }}</p>
   <p></p>
@@ -27,6 +50,59 @@
 
   {% endfor %}
   </ul>
+  <script src="{% static 'compsite_pro/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'compsite_pro/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'compsite_pro/assets/js/custom.js' %}"></script>
+  <script>
+   //according to loftblog tut
+   $('.nav li:first').addClass('active');
+
+   var showSection = function showSection(section, isAnimate) {
+     var
+     direction = section.replace(/#/, ''),
+     reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+     reqSectionPos = reqSection.offset().top - 0;
+
+     if (isAnimate) {
+       $('body, html').animate({
+         scrollTop: reqSectionPos },
+       800);
+     } else {
+       $('body, html').scrollTop(reqSectionPos);
+     }
+
+   };
+
+   var checkSection = function checkSection() {
+     $('.section').each(function () {
+       var
+       $this = $(this),
+       topEdge = $this.offset().top - 80,
+       bottomEdge = topEdge + $this.height(),
+       wScroll = $(window).scrollTop();
+       if (topEdge < wScroll && bottomEdge > wScroll) {
+         var
+         currentId = $this.data('section'),
+         reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+         reqLink.closest('li').addClass('active').
+         siblings().removeClass('active');
+       }
+     });
+   };
+
+   $('.main-menu, .scroll-to-section').on('click', 'a', function (e) {
+     if($(e.target).hasClass('external')) {
+       return;
+     }
+     e.preventDefault();
+     $('#menu').removeClass('active');
+     showSection($(this).attr('href'), true);
+   });
+
+   $(window).scroll(function () {
+     checkSection();
+   });
+</script>
   {% endblock content %}
 </body>
 </html>

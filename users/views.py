@@ -14,6 +14,9 @@ def logout_view(request):
 def register(request):
     if request.method !='POST':
         form = RegisterUserForm()
+        if User.objects.filter(email=email).exists():
+            messages.warning(request,'email is already exists')
+        
     else:
         form =RegisterUserForm(data=request.POST)
 

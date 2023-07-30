@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Topic ,Notice
+from .models import Topic
 from django.http import FileResponse
 import os
 from .models import SubjectEntry
@@ -10,7 +10,7 @@ from reportlab.pdfgen import canvas
 from django.conf import settings
 from django.http import HttpResponse
 from django.http import Http404
-
+from .models import Notice
 
 # Create your views here.
 def index(request):

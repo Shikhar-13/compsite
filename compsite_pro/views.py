@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Topic
+from .models import Topic ,Notice
 from django.http import FileResponse
 import os
 from .models import SubjectEntry
@@ -14,7 +14,9 @@ from django.http import Http404
 
 # Create your views here.
 def index(request):
-    return render(request,'compsite_pro/index.html')
+    notices = Notice.objects.order_by('date_added')
+    context = {'notices':notices}
+    return render(request,'compsite_pro/index.html',context)
 
 def about(request):
     return render(request,'compsite_pro/about.html')

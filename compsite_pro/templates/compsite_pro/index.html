@@ -109,51 +109,35 @@ https://templatemo.com/tm-557-grad-school
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-12">
-          <div class="features-post third-features">
-            <div class="features-content">
-              <div class="content-show">
-                <h4><i class="fa fa-book"></i>Notices</h4>
-              </div>
-              <div class="content-hide">
-                <div><a href="{% url 'compsite_pro:coming' %}">Read More</a></div>
-            </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
  
 
-  {% if user.is_authenticated %}
-  {% for topic in topics %}
+  {% for notice in notices %}
   <section class="section courses" data-section="section4">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-12">
           <div class="section-heading">
-            <h2>Subjects</h2>
-          </div>
-        </div>
-        <div class="owl-carousel owl-theme">
-          <div class="item">
-            <img src="{% static 'compsite_pro/assets/images/courses-01.jpg' %}" alt="Course #1">
-            <div class="down-content">
-              <h4>{{ topic }}</h4>
-              <div class="author-image">
-              </div>
-              <div class="text-button-pay">
-                <a href="{% url 'compsite_pro:topic' topic.id %}">more info<i class="fa fa-angle-double-right"></i></a>
+            <h2>Notices</h2>
+          <section class="section video" data-section="section5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 align-self-center">
+                  <div class="left-content">
+                    <div class="content-show">
+                      <h4><i class="fa fa-book"></i>{{ notice.title|linebreaks }}</h4>
+                    </div>
+                    <p>{{ notice.text|linebreaks }}</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                </div>
               </div>
             </div>
-          </div>
-          {% empty %}
-          {% endfor %}
-          {% endif %}
-         
-         
+          </section>
          
          
         
@@ -162,7 +146,11 @@ https://templatemo.com/tm-557-grad-school
           </div>
         </div>
       </div>
+      </div>
   </section>
+  {% empty %}
+  {% endfor %}
+ 
   
 
 

@@ -7,8 +7,8 @@ class RegisterUserForm(UserCreationForm):
     first_name=forms.CharField()
     last_name=forms.CharField()
     email=forms.EmailField()
-    Branch= forms.ChoiceField(choices=[('',''),('Computer Engineering','Computer engineering'),('IT','IT')])
-    Select_Year = forms.ChoiceField(choices=[('', ''), ('first year', 'First Year'), ('second year','Second Year')])
+    Branch= forms.ChoiceField(choices=[('',''),('Computer Engineering','Computer engineering')])
+    Select_Year = forms.ChoiceField(choices=[('', ''),('second year','Second Year')])
 
     class Meta:
         model = User

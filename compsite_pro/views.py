@@ -39,10 +39,6 @@ def topic(request, topic_id):
     context = {'topic': topic,'entries':entries}
     return render(request, 'compsite_pro/topic.html', context)
 
-def notice(request, topic_id):
-    notices = notice.entries.all()
-    context = {'entry': notice,'notices':notices}
-    return render(request, 'compsite_pro/topic.html', context)
 
 def download(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)

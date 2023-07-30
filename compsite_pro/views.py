@@ -10,13 +10,13 @@ from reportlab.pdfgen import canvas
 from django.conf import settings
 from django.http import HttpResponse
 from django.http import Http404
-from .models import Notice
+#from .models import Notice
 
 # Create your views here.
 def index(request):
-    notices = Notice.objects.order_by('date_added')
-    context = {'notices':notices}
-    return render(request,'compsite_pro/index.html',context)
+    #notices = Notice.objects.order_by('date_added')
+    #context = {'notices':notices}
+    return render(request,'compsite_pro/index.html')
 
 def about(request):
     return render(request,'compsite_pro/about.html')
